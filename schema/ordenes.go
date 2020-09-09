@@ -73,7 +73,7 @@ func (o *Ordenes) InitSchema() graphql.Schema {
 					},
 				},
 				Resolve: func(params graphql.ResolveParams) (interface{}, error) {
-					username, _ := params.Args["username"].(string)
+					username, _ := params.Args["usuario"].(string)
 					password, _ := params.Args["password"].(string)
 
 					err := resolvers.ValidarDatosCliente(username, password)
