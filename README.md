@@ -3,7 +3,7 @@
 El API ordenes, proporciona implementación con graphql y orm en postgres .
 
 ### Modelo de datos
-![ordenes_db] 
+![ordenes](https://user-images.githubusercontent.com/15944053/92544548-c6b0d700-f213-11ea-8e43-b8d99bfabf74.png)
 
 * Lenguaje Golang Versión v1.14.6, (No Requerido con docker)
 
