@@ -1,0 +1,199 @@
+{
+	"info": {
+		"_postman_id": "3421cd6a-612a-43fb-8ba9-b32ea9fdd060",
+		"name": "1.Ordenes_Servicio",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "first test connection",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "{\n    connection\n}",
+						"variables": ""
+					},
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8086/ordenes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8086",
+					"path": [
+						"ordenes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "all clientes",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "{\n  clientes {\n    id\n    usuario\n    password\n  }\n}\n",
+						"variables": ""
+					},
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8086/ordenes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8086",
+					"path": [
+						"ordenes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "solicitudes por tecnico",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "{\r\n  solicitudes_tecnico (id:\"1\") {\r\n    id\r\n    solicitud {\r\n        id\r\n        descripcion\r\n        fecha\r\n        ticket\r\n        calificacion{id, nombre}\r\n        tipoSolicitud{id, nombre}\r\n    }\r\n    tecnico {\r\n        id\r\n        nombre\r\n    }\r\n  }\r\n}",
+						"variables": ""
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8086/ordenes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8086",
+					"path": [
+						"ordenes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "solicitudes por tecnico y fecha",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "{\r\n  solicitudes_tecnico (id:\"2\",fecha:\"2020-09-22\") {\r\n    id\r\n    solicitud {\r\n        id\r\n        descripcion\r\n        fecha\r\n        ticket\r\n        calificacion{id, nombre}\r\n        tipoSolicitud{id, nombre}\r\n    }\r\n    tecnico {\r\n        id\r\n        nombre\r\n    }\r\n  }\r\n}",
+						"variables": ""
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8086/ordenes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8086",
+					"path": [
+						"ordenes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "crear solicitud",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXNzd29yZCI6ImpocXV1cXdkaGhhRzIxMWgyM2phZGhhanMxIiwidXNlcm5hbWUiOiIifQ.ldWjMHTIquIcayAta-Vp63EnalCG6U74mbPUVzUUlFA",
+							"type": "string"
+						},
+						{
+							"key": "in",
+							"value": "header",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "token",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "mutation {\r\n  crearSolicitud (\r\ndescripcion:\"nueva descripcion 3\"\r\nfecha:\"2020-09-23\"\r\ncalificacion:5\r\ntipoSolicitud:1\r\ncliente:2\r\nestado:1\r\nservicio:2\r\n  ) {\r\nid\r\ndescripcion \r\nfecha \r\nticket \r\ncalificacion {id}\r\ncliente {id}\r\nestado {id}\r\nservicio {id}\r\ntipoSolicitud {id}\r\n  }\r\n}",
+						"variables": ""
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8086/ordenes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8086",
+					"path": [
+						"ordenes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login del Cliente",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "mutation {\r\n  loginCliente (\r\nusuario:\"Alberwswesk@gmail.com\"\r\npassword:\"jhquuqwdhhaG211h23jadhajs1\"\r\n  )\r\n}",
+						"variables": ""
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8086/ordenes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8086",
+					"path": [
+						"ordenes"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
