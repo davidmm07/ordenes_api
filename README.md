@@ -20,7 +20,7 @@ El API ordenes, proporciona implementación con graphql y orm en postgres .
 
 1. Clonar el repositorio
 ```sh
-git clone -b dev https://github.com/davidmm07/ordenes_api
+git clone https://github.com/davidmm07/ordenes_api
 ```
 
 2. Moverse a la carpeta del repositorio
