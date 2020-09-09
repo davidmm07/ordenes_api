@@ -1,10 +1,14 @@
-# ordenes:api
+# Ordenes_api
 
-El API ordenes_api, proporciona implementación con graphql y orm en postgres .
+El API ordenes, proporciona implementación con graphql y orm en postgres .
 
 ### Modelo de datos
 ![ordenes_db] 
+
+* Lenguaje Golang Versión v1.14.6, (No Requerido con docker)
+
 ## Como ejecutar
+
 
 ### Requisitos previos :whale:
 * Docker
@@ -41,6 +45,10 @@ docker ps
 ```
 
 6. Probar los endpoints del archivo en el directorio files
+
+# Patrones Usados
+
+- DAO(Data Access Object)
 
 ## Derechos de Autor
 
